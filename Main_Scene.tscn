@@ -1,10 +1,50 @@
 [gd_scene format=3 uid="uid://c6jkds74fn2mm"]
 
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_8sucx"]
+[ext_resource type="PackedScene" uid="uid://bbaflvyj1wesb" path="res://Scenes/fire.tscn" id="1_8sucx"]
+[ext_resource type="Script" uid="uid://b8w6xa25sq4ic" path="res://Scripts/Inventory.gd" id="2_5yw3w"]
+[ext_resource type="Theme" uid="uid://c6yfacx51o2ms" path="res://Assets/Themes/UI_theme.tres" id="2_7fr83"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="3_qtktj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tkmsp"]
+font_size = 32
 
 [node name="Main" type="Node2D" unique_id=1648927771]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1598518595]
-texture = ExtResource("1_8sucx")
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1311612005]
+
+[node name="Fire" parent="." unique_id=1318183114 instance=ExtResource("1_8sucx")]
+
+[node name="Inventory" type="MarginContainer" parent="." unique_id=58156267]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -578.0
+offset_top = -326.0
+offset_right = 574.0
+offset_bottom = 322.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+script = ExtResource("2_5yw3w")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Inventory" unique_id=1828998597]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="WoodTexture" type="TextureRect" parent="Inventory/HBoxContainer" unique_id=1692512202]
+layout_mode = 2
+texture = ExtResource("3_qtktj")
+expand_mode = 2
+
+[node name="WoodLabel" type="Label" parent="Inventory/HBoxContainer" unique_id=1541536502]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme = ExtResource("2_7fr83")
+text = "10"
+label_settings = SubResource("LabelSettings_tkmsp")
+horizontal_alignment = 1
