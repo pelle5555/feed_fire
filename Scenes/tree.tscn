@@ -1,7 +1,63 @@
 [gd_scene format=3 uid="uid://op5xh4680js4"]
 
+[ext_resource type="Texture2D" uid="uid://t0mqdga0mk3a" path="res://Assets/Sprites/Trees_Free/Shadow/Black Outline/Premium_Trees_Black_Outline.png" id="1_0vwjc"]
+[ext_resource type="Script" uid="uid://cc1xemu252gat" path="res://Scripts/tree.gd" id="1_rsuno"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsuno"]
+atlas = ExtResource("1_0vwjc")
+region = Rect2(448, 112, 64, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7sa7"]
+size = Vector2(59, 100)
+
+[sub_resource type="Animation" id="Animation_rsuno"]
+resource_name = "Chopped"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2),
+"transitions": PackedFloat32Array(-2, -2, -2, -2),
+"update": 0,
+"values": [0.0, 0.05235987755982989, -0.05235987755982989, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_l7sa7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l3oha"]
+_data = {
+&"Chopped": SubResource("Animation_rsuno"),
+&"RESET": SubResource("Animation_l7sa7")
+}
+
 [node name="Tree" type="Node2D" unique_id=399329243]
 
 [node name="Area2D" type="Area2D" parent="." unique_id=695366536]
+script = ExtResource("1_rsuno")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1100963449]
+texture = SubResource("AtlasTexture_rsuno")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1974397700]
+position = Vector2(-1.5, -1)
+shape = SubResource("RectangleShape2D_l7sa7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D" unique_id=89140364]
+libraries/ = SubResource("AnimationLibrary_l3oha")

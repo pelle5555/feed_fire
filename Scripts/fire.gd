@@ -24,5 +24,5 @@ func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void
 func add_to_fire() -> void:
 	print("added wood to fire")
 	fire_size += fire_increase
-	animated_sprite_2d.scale = Vector2(fire_size, fire_size)
+	scale = Vector2(fire_size, fire_size)
 	inventory.subtract_wood()

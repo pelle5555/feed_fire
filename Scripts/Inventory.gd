@@ -1,8 +1,9 @@
 extends MarginContainer
+class_name Inventory
 
 @onready var wood_label: Label = $HBoxContainer/WoodLabel
 
-@export var starting_wood: int = 1
+@export var starting_wood: int = 10
 
 var wood_amount: int
 
@@ -12,11 +13,11 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
-		add_wood()
+		add_wood(1)
 
-func add_wood() -> void:
+func add_wood(amount) -> void:
 	print("wood added")
-	wood_amount += 1
+	wood_amount += amount
 	wood_label.text = str(wood_amount)
 	
 func subtract_wood() -> void:
