@@ -12,11 +12,6 @@ var tree_hitpoints = tree_start_hitpoints:
 		if tree_hitpoints <= 0:
 			cut_down_tree()
 
-func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			chop_tree()
-
 func chop_tree() -> void:
 	tree_hitpoints -= 1
 	
@@ -25,3 +20,6 @@ func cut_down_tree() -> void:
 	inventory.add_wood(2)
 #	todo: play cutdown animation
 	queue_free()
+
+func mouse_click() -> void:
+	chop_tree()

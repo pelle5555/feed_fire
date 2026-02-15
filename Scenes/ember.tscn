@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://76lovydo6bt0"]
+
+[ext_resource type="Script" uid="uid://c01wobxyyfwwo" path="res://Scripts/ember.gd" id="1_snadj"]
+[ext_resource type="PackedScene" uid="uid://dpbuhrnywco3f" path="res://Scenes/mouse_click_component.tscn" id="2_8gqj3"]
+[ext_resource type="Texture2D" uid="uid://dn31gbhuexsr3" path="res://Assets/Sprites/Trees_Free/Forage Items/Singles/Forage Items/05_Birch_Seed.png" id="3_snadj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b8058"]
+radius = 20.024984
+
+[node name="Ember" type="Node2D" unique_id=637704573]
+script = ExtResource("1_snadj")
+
+[node name="MouseClickComponent" parent="." unique_id=1124591605 node_paths=PackedStringArray("clickable") instance=ExtResource("2_8gqj3")]
+clickable = NodePath("..")
+
+[node name="Sprite2D" type="Sprite2D" parent="MouseClickComponent" unique_id=338855072]
+texture = ExtResource("3_snadj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseClickComponent" unique_id=1044806545]
+shape = SubResource("CircleShape2D_b8058")

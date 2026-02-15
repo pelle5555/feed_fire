@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://bbaflvyj1wesb"]
 
 [ext_resource type="Script" uid="uid://cdspe4u1epitc" path="res://Scripts/fire.gd" id="1_yr3ur"]
+[ext_resource type="PackedScene" uid="uid://dpbuhrnywco3f" path="res://Scenes/mouse_click_component.tscn" id="2_idb68"]
 [ext_resource type="Texture2D" uid="uid://drvr2vstwnr8k" path="res://Assets/Sprites/Fire/Group 5 - 4.png" id="2_yr3ur"]
+[ext_resource type="Texture2D" uid="uid://p3elqbhpy564" path="res://Assets/Sprites/Trees_Free/Forage Items/Singles/Forage Items/10_Oak_Seed.png" id="4_s2jnl"]
+[ext_resource type="Script" uid="uid://dfcywkyqkv461" path="res://Scripts/influence.gd" id="5_8uni6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_idb68"]
 atlas = ExtResource("2_yr3ur")
@@ -70,13 +73,29 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_yr3ur"]
 radius = 45.044422
 
-[node name="Fire" type="Area2D" unique_id=239073171]
+[sub_resource type="Gradient" id="Gradient_idb68"]
+offsets = PackedFloat32Array(0.04115854, 0.50457317, 1)
+colors = PackedColorArray(0.99999994, 0.886899, 0.78418094, 1, 1, 0.6373664, 0.2273457, 1, 0.92434746, 0.260992, 0.076123275, 1)
+
+[node name="Fire" type="Node2D" unique_id=368429430]
 script = ExtResource("1_yr3ur")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=596624345]
+[node name="MouseClickComponent" parent="." unique_id=1124591605 node_paths=PackedStringArray("clickable") instance=ExtResource("2_idb68")]
+clickable = NodePath("..")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MouseClickComponent" unique_id=596624345]
 sprite_frames = SubResource("SpriteFrames_lcnk6")
 autoplay = "default"
-frame_progress = 0.8393003
+frame_progress = 0.05340195
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=76047691]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseClickComponent" unique_id=76047691]
 shape = SubResource("CircleShape2D_yr3ur")
+
+[node name="FireLine" type="Line2D" parent="." unique_id=1957546261]
+width = 5.0
+gradient = SubResource("Gradient_idb68")
+texture = ExtResource("4_s2jnl")
+texture_mode = 2
+
+[node name="Influence" type="Area2D" parent="." unique_id=1107249097]
+script = ExtResource("5_8uni6")
