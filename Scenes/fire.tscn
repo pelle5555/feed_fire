@@ -2,54 +2,45 @@
 
 [ext_resource type="Script" uid="uid://cdspe4u1epitc" path="res://Scripts/fire.gd" id="1_yr3ur"]
 [ext_resource type="PackedScene" uid="uid://dpbuhrnywco3f" path="res://Scenes/mouse_click_component.tscn" id="2_idb68"]
-[ext_resource type="Texture2D" uid="uid://drvr2vstwnr8k" path="res://Assets/Sprites/Fire/Group 5 - 4.png" id="2_yr3ur"]
-[ext_resource type="Texture2D" uid="uid://p3elqbhpy564" path="res://Assets/Sprites/Trees_Free/Forage Items/Singles/Forage Items/10_Oak_Seed.png" id="4_s2jnl"]
+[ext_resource type="Texture2D" uid="uid://bn4cyals3vqtx" path="res://Assets/Sprites/Fire/Group 4 - 1.png" id="3_8uni6"]
+[ext_resource type="Texture2D" uid="uid://d0i303ty8utje" path="res://Assets/Sprites/Fire/Group 5 - 3.png" id="4_8uni6"]
 [ext_resource type="Script" uid="uid://dfcywkyqkv461" path="res://Scripts/influence.gd" id="5_8uni6"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_idb68"]
-atlas = ExtResource("2_yr3ur")
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrujk"]
+atlas = ExtResource("3_8uni6")
 region = Rect2(0, 0, 32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s2jnl"]
-atlas = ExtResource("2_yr3ur")
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dmct"]
+atlas = ExtResource("3_8uni6")
 region = Rect2(32, 0, 32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8uni6"]
-atlas = ExtResource("2_yr3ur")
+[sub_resource type="AtlasTexture" id="AtlasTexture_w35r5"]
+atlas = ExtResource("3_8uni6")
 region = Rect2(64, 0, 32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hrujk"]
-atlas = ExtResource("2_yr3ur")
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcnk6"]
+atlas = ExtResource("3_8uni6")
 region = Rect2(96, 0, 32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6dmct"]
-atlas = ExtResource("2_yr3ur")
+[sub_resource type="AtlasTexture" id="AtlasTexture_3h6i6"]
+atlas = ExtResource("3_8uni6")
 region = Rect2(128, 0, 32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w35r5"]
-atlas = ExtResource("2_yr3ur")
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdy38"]
+atlas = ExtResource("3_8uni6")
 region = Rect2(160, 0, 32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lcnk6"]
-atlas = ExtResource("2_yr3ur")
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcqii"]
+atlas = ExtResource("3_8uni6")
 region = Rect2(192, 0, 32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3h6i6"]
-atlas = ExtResource("2_yr3ur")
+[sub_resource type="AtlasTexture" id="AtlasTexture_f515s"]
+atlas = ExtResource("3_8uni6")
 region = Rect2(224, 0, 32, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lcnk6"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_idb68")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s2jnl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8uni6")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hrujk")
 }, {
@@ -64,6 +55,15 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3h6i6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdy38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcqii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f515s")
 }],
 "loop": true,
 "name": &"default",
@@ -84,9 +84,10 @@ script = ExtResource("1_yr3ur")
 clickable = NodePath("..")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MouseClickComponent" unique_id=596624345]
+position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_lcnk6")
 autoplay = "default"
-frame_progress = 0.05340195
+frame_progress = 0.2941236
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MouseClickComponent" unique_id=76047691]
 shape = SubResource("CircleShape2D_yr3ur")
@@ -94,7 +95,7 @@ shape = SubResource("CircleShape2D_yr3ur")
 [node name="FireLine" type="Line2D" parent="." unique_id=1957546261]
 width = 5.0
 gradient = SubResource("Gradient_idb68")
-texture = ExtResource("4_s2jnl")
+texture = ExtResource("4_8uni6")
 texture_mode = 2
 
 [node name="Influence" type="Area2D" parent="." unique_id=1107249097]

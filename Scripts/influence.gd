@@ -2,7 +2,7 @@ extends Area2D
 
 @export var radius: float = 80.0
 @export var dot_count: int = 40
-@export var dot_radius: float = 2.5
+@export var dot_radius: float = 2
 @export var ring_thickness: float = 0.0 # not used, but handy if you expand later
 @export var color: Color = Color(1.0, 0.86, 0.736, 0.9)
 
