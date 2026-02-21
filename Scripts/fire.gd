@@ -6,7 +6,7 @@ extends Node2D
 @onready var fire_line: Line2D = $FireLine
 @onready var collision_shape_2d: CollisionShape2D = $Influence/CollisionShape2D
 @onready var mouse_click_component: Area2D = $MouseClickComponent
-@onready var influence_circle: Area2D = $Influence
+@onready var influence_circle: Node2D = $Influence
 
 
 @export var fire_starting_size: float = 1
@@ -25,9 +25,11 @@ func _process(delta: float) -> void:
 	create_fire_arm(delta)
 
 func create_fire_arm(delta) -> void:
+	var distance = Vector2.ZERO.distance_to(get_local_mouse_position())
+
 	_t += delta
 	var start := Vector2.ZERO
-	var end := get_local_mouse_position()
+	var end := get_local_mouse_position().limit_length(influence_circle.radius)
 
 	var pts: PackedVector2Array = []
 	pts.resize(segments + 1)
@@ -44,6 +46,7 @@ func create_fire_arm(delta) -> void:
 		pts[i] = point
 
 	fire_line.points = pts
+
 
 func add_to_fire() -> void:
 	print("added wood to fire")

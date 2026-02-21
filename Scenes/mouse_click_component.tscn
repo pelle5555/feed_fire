@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dpbuhrnywco3f"]
 
-[ext_resource type="Script" uid="uid://cqksxiy0thite" path="res://Scenes/mouse_input_component.gd" id="1_wxovb"]
+[ext_resource type="Script" uid="uid://cqksxiy0thite" path="res://Scripts/mouse_input_component.gd" id="1_wxovb"]
 
 [node name="MouseClickComponent" type="Area2D" unique_id=1124591605]
 script = ExtResource("1_wxovb")

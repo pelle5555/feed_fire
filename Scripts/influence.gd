@@ -1,4 +1,4 @@
-extends Area2D
+extends Node2D
 
 @export var radius: float = 80.0
 @export var dot_count: int = 40

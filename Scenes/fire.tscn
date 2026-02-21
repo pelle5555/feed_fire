@@ -98,5 +98,6 @@ gradient = SubResource("Gradient_idb68")
 texture = ExtResource("4_8uni6")
 texture_mode = 2
 
-[node name="Influence" type="Area2D" parent="." unique_id=1107249097]
+[node name="Influence" type="Node2D" parent="." unique_id=1609091065]
 script = ExtResource("5_8uni6")
+radius = 120.0

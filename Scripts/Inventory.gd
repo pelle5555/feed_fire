@@ -2,6 +2,8 @@ extends MarginContainer
 class_name Inventory
 
 @onready var wood_label: Label = $HBoxContainer/WoodLabel
+@onready var fire_power_label: Label = $HBoxContainer/FirePowerLabel
+
 
 @export var starting_wood: int = 10
 

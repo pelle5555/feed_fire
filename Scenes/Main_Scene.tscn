@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b8w6xa25sq4ic" path="res://Scripts/Inventory.gd" id="2_5yw3w"]
 [ext_resource type="Theme" uid="uid://c6yfacx51o2ms" path="res://Assets/Themes/UI_theme.tres" id="2_7fr83"]
 [ext_resource type="Texture2D" uid="uid://buhotq5mrqifq" path="res://Assets/Sprites/Trees_Free/Forage Items/Singles/Forage Items/08_Oak_Log.png" id="3_qtktj"]
+[ext_resource type="Texture2D" uid="uid://ch1bewrcftmry" path="res://Assets/Sprites/Fire/Group 5 - 3_2.png" id="4_1l8qe"]
 [ext_resource type="PackedScene" uid="uid://op5xh4680js4" path="res://Scenes/tree.tscn" id="5_qtktj"]
 [ext_resource type="PackedScene" uid="uid://76lovydo6bt0" path="res://Scenes/ember.tscn" id="6_654x7"]
 
@@ -39,8 +40,24 @@ size_flags_vertical = 0
 layout_mode = 2
 texture = ExtResource("3_qtktj")
 expand_mode = 2
+stretch_mode = 3
 
 [node name="WoodLabel" type="Label" parent="Inventory/HBoxContainer" unique_id=1541536502]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme = ExtResource("2_7fr83")
+text = "10"
+label_settings = SubResource("LabelSettings_tkmsp")
+horizontal_alignment = 1
+
+[node name="FirePowerTexture" type="TextureRect" parent="Inventory/HBoxContainer" unique_id=1444888397]
+layout_mode = 2
+texture = ExtResource("4_1l8qe")
+expand_mode = 2
+stretch_mode = 3
+
+[node name="FirePowerLabel" type="Label" parent="Inventory/HBoxContainer" unique_id=38769776]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
