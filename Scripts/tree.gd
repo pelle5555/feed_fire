@@ -1,8 +1,8 @@
 extends Node2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var inventory: Inventory = $"../../Inventory"
 
-@export var inventory: Inventory
 @export var tree_start_hitpoints: int = 5
 
 var tree_hitpoints = tree_start_hitpoints:

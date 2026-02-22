@@ -49,7 +49,6 @@ func create_fire_arm(delta) -> void:
 
 
 func add_to_fire() -> void:
-	print("added wood to fire")
 	fire_size += fire_increase
 	influence_circle.radius += influence_increase
 	mouse_click_component.scale = Vector2(fire_size, fire_size)

@@ -16,17 +16,6 @@ font_size = 32
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1311612005]
 
-[node name="Ember" parent="." unique_id=637704573 instance=ExtResource("6_654x7")]
-position = Vector2(231, 0)
-
-[node name="Fire" parent="." unique_id=1318183114 instance=ExtResource("1_8sucx")]
-
-[node name="SpawnManager" type="Node2D" parent="." unique_id=947895699]
-script = ExtResource("8_7h23t")
-tree_scene = ExtResource("5_qtktj")
-
-[node name="SpawnTimer" type="Timer" parent="SpawnManager" unique_id=1520101672]
-
 [node name="Inventory" type="MarginContainer" parent="." unique_id=58156267]
 anchors_preset = 15
 anchor_right = 1.0
@@ -78,7 +67,28 @@ text = "10"
 label_settings = SubResource("LabelSettings_tkmsp")
 horizontal_alignment = 1
 
+[node name="Tree" parent="." unique_id=399329243 node_paths=PackedStringArray("inventory") instance=ExtResource("5_qtktj")]
+position = Vector2(-499, -170)
+inventory = NodePath("../Inventory")
+
+[node name="Tree2" parent="." unique_id=353595341 node_paths=PackedStringArray("inventory") instance=ExtResource("5_qtktj")]
+position = Vector2(-94, -4)
+inventory = NodePath("../Inventory")
+
+[node name="Ember" parent="." unique_id=637704573 instance=ExtResource("6_654x7")]
+position = Vector2(231, 0)
+
+[node name="Fire" parent="." unique_id=1318183114 instance=ExtResource("1_8sucx")]
+
+[node name="SpawnManager" type="Node2D" parent="." unique_id=947895699]
+script = ExtResource("8_7h23t")
+tree_scene = ExtResource("5_qtktj")
+
+[node name="SpawnTimer" type="Timer" parent="SpawnManager" unique_id=1520101672]
+
 [connection signal="timeout" from="SpawnManager/SpawnTimer" to="SpawnManager" method="_on_spawn_timer_timeout"]
 
+[editable path="Tree"]
+[editable path="Tree2"]
 [editable path="Ember"]
 [editable path="Fire"]

@@ -48,7 +48,8 @@ _data = {
 &"RESET": SubResource("Animation_l7sa7")
 }
 
-[node name="Tree" type="Node2D" unique_id=399329243]
+[node name="Tree" type="Node2D" unique_id=399329243 groups=["trees"]]
+scale = Vector2(0.75083864, 0.75083864)
 script = ExtResource("1_rsuno")
 
 [node name="MouseClickComponent" parent="." unique_id=1124591605 node_paths=PackedStringArray("clickable") instance=ExtResource("2_l7sa7")]

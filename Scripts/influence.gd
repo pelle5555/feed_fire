@@ -1,8 +1,8 @@
 extends Node2D
 
-@export var radius: float = 80.0
-@export var dot_count: int = 40
-@export var dot_radius: float = 2
+@export var radius: float
+@export var dot_radius_relation: float = 2.0
+@export var dot_radius: float = 1.5
 @export var ring_thickness: float = 0.0 # not used, but handy if you expand later
 @export var color: Color = Color(1.0, 0.86, 0.736, 0.9)
 
@@ -10,9 +10,11 @@ extends Node2D
 @export var pulse_amount: float = 2.0    # pixels
 @export var pulse_speed: float = 1.0     # speed of pulse
 
+var dot_count: int
 var _t := 0.0
 
 func _process(delta: float) -> void:
+	dot_count = radius / dot_radius_relation 
 	_t += delta
 	queue_redraw()
 
@@ -28,3 +30,6 @@ func _draw() -> void:
 		var a := rot + step * i
 		var p := Vector2(cos(a), sin(a)) * r
 		draw_circle(p, dot_radius, color)
+
+func is_position_reachable(pos: Vector2) -> bool:
+	return global_position.distance_to(pos) <= radius
