@@ -16,16 +16,16 @@ font_size = 32
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1311612005]
 
-[node name="Ember" parent="." unique_id=637704573 instance=ExtResource("6_654x7")]
-position = Vector2(231, 0)
-
-[node name="Fire" parent="." unique_id=1318183114 instance=ExtResource("1_8sucx")]
-
 [node name="SpawnManager" type="Node2D" parent="." unique_id=947895699]
 script = ExtResource("8_7h23t")
 tree_scene = ExtResource("5_qtktj")
 
 [node name="SpawnTimer" type="Timer" parent="SpawnManager" unique_id=1520101672]
+
+[node name="Ember" parent="." unique_id=637704573 instance=ExtResource("6_654x7")]
+position = Vector2(231, 0)
+
+[node name="Fire" parent="." unique_id=1318183114 instance=ExtResource("1_8sucx")]
 
 [node name="Inventory" type="MarginContainer" parent="." unique_id=58156267]
 anchors_preset = 15
