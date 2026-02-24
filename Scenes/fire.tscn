@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dpbuhrnywco3f" path="res://Scenes/mouse_click_component.tscn" id="2_idb68"]
 [ext_resource type="Texture2D" uid="uid://bn4cyals3vqtx" path="res://Assets/Sprites/Fire/Group 4 - 1.png" id="3_8uni6"]
 [ext_resource type="Texture2D" uid="uid://d0i303ty8utje" path="res://Assets/Sprites/Fire/Group 5 - 3.png" id="4_8uni6"]
-[ext_resource type="Script" uid="uid://dfcywkyqkv461" path="res://Scripts/influence.gd" id="5_8uni6"]
+[ext_resource type="PackedScene" uid="uid://d26odrprv2fqa" path="res://Scenes/influence.tscn" id="5_8uni6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hrujk"]
 atlas = ExtResource("3_8uni6")
@@ -71,7 +71,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yr3ur"]
-radius = 45.044422
+radius = 21.095022
 
 [sub_resource type="Gradient" id="Gradient_idb68"]
 offsets = PackedFloat32Array(0.04115854, 0.50457317, 1)
@@ -98,6 +98,4 @@ gradient = SubResource("Gradient_idb68")
 texture = ExtResource("4_8uni6")
 texture_mode = 2
 
-[node name="Influence" type="Node2D" parent="." unique_id=1609091065 groups=["influence"]]
-script = ExtResource("5_8uni6")
-radius = 150.0
+[node name="Influence" parent="." unique_id=2041364360 instance=ExtResource("5_8uni6")]

@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dflmwmbpjoetn" path="res://Assets/Sprites/Fire/ember.png" id="2_i67hi"]
 [ext_resource type="Texture2D" uid="uid://drhhu67o1sjcm" path="res://Assets/Sprites/Trees_Free/Forage Items/Singles/Forage Items/01_Birch_Branch.png" id="3_sshvd"]
 [ext_resource type="Texture2D" uid="uid://drvdjtr1m0cwg" path="res://Assets/Sprites/Trees_Free/Forage Items/Singles/Forage Items/02_Birch_Branch_Leaf.png" id="4_i67hi"]
+[ext_resource type="PackedScene" uid="uid://d26odrprv2fqa" path="res://Scenes/influence.tscn" id="6_i67hi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b8058"]
 radius = 20.024984
@@ -18,12 +19,16 @@ onfire_texture = ExtResource("4_i67hi")
 [node name="MouseClickComponent" parent="." unique_id=1124591605 node_paths=PackedStringArray("clickable") instance=ExtResource("2_8gqj3")]
 clickable = NodePath("..")
 
-[node name="Sprite2D" type="Sprite2D" parent="MouseClickComponent" unique_id=338855072]
+[node name="EmberSprite" type="Sprite2D" parent="MouseClickComponent" unique_id=338855072]
+unique_name_in_owner = true
 texture = ExtResource("2_i67hi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MouseClickComponent" unique_id=1044806545]
 shape = SubResource("CircleShape2D_b8058")
 
 [node name="Timer" type="Timer" parent="." unique_id=1427822620]
+
+[node name="Influence" parent="." unique_id=2041364360 instance=ExtResource("6_i67hi")]
+radius = 90.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
