@@ -4,7 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://dpbuhrnywco3f" path="res://Scenes/mouse_click_component.tscn" id="2_idb68"]
 [ext_resource type="Texture2D" uid="uid://bn4cyals3vqtx" path="res://Assets/Sprites/Fire/Group 4 - 1.png" id="3_8uni6"]
 [ext_resource type="Texture2D" uid="uid://d0i303ty8utje" path="res://Assets/Sprites/Fire/Group 5 - 3.png" id="4_8uni6"]
-[ext_resource type="Script" uid="uid://dfcywkyqkv461" path="res://Scripts/influence.gd" id="5_8uni6"]
+[ext_resource type="PackedScene" uid="uid://d26odrprv2fqa" path="res://Scenes/influence.tscn" id="5_8uni6"]
+[ext_resource type="Script" uid="uid://dhdx1j6bsbg5q" path="res://Scripts/fire_line.gd" id="5_hrujk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hrujk"]
 atlas = ExtResource("3_8uni6")
@@ -92,12 +93,12 @@ frame_progress = 0.2941236
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MouseClickComponent" unique_id=76047691]
 shape = SubResource("CircleShape2D_yr3ur")
 
-[node name="FireLine" type="Line2D" parent="." unique_id=1957546261]
+[node name="FireLine" type="Line2D" parent="." unique_id=1957546261 node_paths=PackedStringArray("influence_circle")]
 width = 5.0
 gradient = SubResource("Gradient_idb68")
 texture = ExtResource("4_8uni6")
 texture_mode = 2
+script = ExtResource("5_hrujk")
+influence_circle = NodePath("../Influence")
 
-[node name="Influence" type="Node2D" parent="." unique_id=1609091065 groups=["influence"]]
-script = ExtResource("5_8uni6")
-radius = 150.0
+[node name="Influence" parent="." unique_id=1760082743 instance=ExtResource("5_8uni6")]

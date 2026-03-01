@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://d26odrprv2fqa"]
+
+[ext_resource type="Script" uid="uid://dfcywkyqkv461" path="res://Scripts/influence.gd" id="1_ju28o"]
+
+[node name="Influence" type="Node2D" unique_id=1760082743 groups=["influence"]]
+script = ExtResource("1_ju28o")
+radius = 150.0

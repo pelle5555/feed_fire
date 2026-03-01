@@ -1,7 +1,5 @@
 extends Node2D
 
-
-
 @export var initial_tree_count: int = 20
 @export var tree_scene: PackedScene
 @export var min_tree_distance: float = 48.0
