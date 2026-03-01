@@ -1,6 +1,13 @@
 [gd_scene format=3 uid="uid://dpbuhrnywco3f"]
 
 [ext_resource type="Script" uid="uid://cqksxiy0thite" path="res://Scripts/mouse_input_component.gd" id="1_wxovb"]
+[ext_resource type="PackedScene" uid="uid://76lovydo6bt0" path="res://Scenes/ember.tscn" id="2_wxovb"]
 
 [node name="MouseClickComponent" type="Area2D" unique_id=1124591605]
 script = ExtResource("1_wxovb")
+ember_scene = ExtResource("2_wxovb")
+
+[node name="Timer" type="Timer" parent="." unique_id=929971030]
+wait_time = 3.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

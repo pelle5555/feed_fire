@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var timer: Timer = $Timer
-@onready var sprite_2d: Sprite2D = $MouseClickComponent/Sprite2D
+@onready var ember_sprite: Sprite2D = %EmberSprite
 
 @export var ember_texture: Texture2D
 @export var smoking_texture: Texture2D
@@ -36,11 +36,11 @@ func set_next_state() -> void:
 func update_visuals():
 	match current_state:
 		EmberState.EMBER:
-			sprite_2d.texture = ember_texture
+			ember_sprite.texture = ember_texture
 		EmberState.SMOKING:
-			sprite_2d.texture = smoking_texture
+			ember_sprite.texture = smoking_texture
 		EmberState.ON_FIRE:
-			sprite_2d.texture = onfire_texture
+			ember_sprite.texture = onfire_texture
 
 func mouse_click() -> void:
 	print("click click")

@@ -33,3 +33,4 @@ func _draw() -> void:
 
 func is_position_reachable(pos: Vector2) -> bool:
 	return global_position.distance_to(pos) <= radius
+	
