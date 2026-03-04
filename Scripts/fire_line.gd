@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 
 func create_fire_arm(delta) -> void:
 	var distance = Vector2.ZERO.distance_to(get_local_mouse_position())
-
+	print(distance)
 	_t += delta
 	var start := Vector2.ZERO
 	var end := get_local_mouse_position().limit_length(influence_circle.radius)
