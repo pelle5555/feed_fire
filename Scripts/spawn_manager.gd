@@ -13,6 +13,23 @@ var tree_positions: Array[Vector2] = []
 func _ready() -> void:
 	print(screen_size)
 	initial_tree_spawn()
+	
+#Is also used in mouse_input. I should be move somewhere else
+func _get_influences() -> Array:
+	return get_tree().get_nodes_in_group("influence")
+
+#Is also used in mouse_input. I should be move somewhere else
+func is_position_in_any_influence(pos: Vector2) -> bool:
+	for influence in _get_influences():
+		print(influence)
+		if influence.is_position_reachable(pos):
+			return true
+	return false
+	
+func _input(event):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed and event.double_click:
+		if is_position_in_any_influence(event.position): 
+			print("Right mouse clicked!")
 
 func initial_tree_spawn() -> void: 
 	var rng = RandomNumberGenerator.new()
